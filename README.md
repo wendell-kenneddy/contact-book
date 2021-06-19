@@ -136,4 +136,4 @@ Tem alguma ideia que poderia alavancar ainda mais o projeto, e deseja implementa
 
 ## 🔓 Licença
 
-Este projeto está sob licensa MIT. Clique [aqui](./.github/LICENSE) para mais detalhes.
+Este projeto está sob licença MIT. Clique [aqui](./.github/LICENSE) para mais detalhes.
