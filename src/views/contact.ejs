@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include('./includes/meta-header.ejs', {
+  title: 'ContactBook | Adicionar contato',
+  scriptSrc: null,
+  stylesheets: [
+    '/styles/main.css',
+    '/styles/partials/header.css',
+    '/styles/partials/buttons.css',
+    '/styles/partials/form.css',
+    '/styles/pages/contact.css',
+    '/styles/partials/responsivity.css'
+  ]
+}); %>
+
+<body>
+  <%- include('./includes/header.ejs', { title: 'Adicionar contato' }); %>
+
+  <main>
+    <h1 class="sr-only">Formulário para adicionar contato</h1>
+
+    <form action="/contact" method="POST">
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" />
+      <label for="phone">Telefone</label>
+      <input type="tel" name="phone" id="phone">
+      <button class="button primary-blue">Salvar</button>
+    </form>
+  </main>
+</body>
+
+</html>

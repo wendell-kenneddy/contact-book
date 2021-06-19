@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include('./includes/meta-header.ejs', {
+  title: 'ContactBook',
+  scriptSrc: '/dist/bundle.js',
+  stylesheets: [
+    '/styles/main.css',
+    '/styles/partials/header.css',
+    '/styles/partials/cards.css',
+    '/styles/partials/modal.css',
+    '/styles/partials/buttons.css',
+    '/styles/pages/index.css',
+    '/styles/partials/responsivity.css'
+  ]
+}); %>
+
+<body>
+  <header class="page-header" role="banner">
+    <div class="header-content">
+      <a href="/" class="title">ContactBook</a>
+
+      <a href="/contact" rel="next">Adicionar contato</a>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="sr-only">Contatos</h1>
+
+    <% contacts.forEach(contact => { %>
+    <div class="container card" data-id="<%= contact.id %>">
+      <p class="id"><%= contact.id %></p>
+      <p class="name"><%= contact.name %></p>
+      <p class="tel-number"><%= contact.phone %></p>
+
+      <div class="actions">
+        <a href="#" class="open-modal delete">
+          <img src="/images/trash.svg" alt="Excluir contato" width="20"
+            height="24">
+        </a>
+
+        <a href="/contact/edit/<%= contact.id %>" class="open-modal edit">
+          <img src="/images/edit.svg" alt="Editar contato" width="20"
+            height="24">
+        </a>
+      </div>
+    </div>
+    <% }); %>
+  </main>
+
+  <div class="modal-wrapper">
+    <div class="modal container">
+      <p>Deseja realmente apagar este contato? Esta ação é irreversível.</p>
+
+      <div class="btn-group">
+        <button type="submit" form="delete-contact"
+          class="button">Confirmar</button>
+        <a href="#" class="button light-blue cancel">Cancelar</a>
+      </div>
+    </div>
+  </div>
+
+  <form method="POST" id="delete-contact"></form>
+</body>
+
+</html>

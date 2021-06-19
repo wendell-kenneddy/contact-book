@@ -1,0 +1,9 @@
+main {
+  margin: -3rem auto 1rem auto;
+  width: 90vw;
+  max-width: 800px;
+}
+
+main > div + div {
+  margin: 0.6rem 0;
+}

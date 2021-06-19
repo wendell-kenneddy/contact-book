@@ -1,0 +1,23 @@
+.header-content {
+  display: grid;
+  grid-template-columns: 5% 95%;
+}
+
+.header-content h1,
+.header-content a {
+  color: var(--text-color-hover);
+}
+
+.header-content a:hover {
+  color: var(--text-color);
+}
+
+.header-content h1 {
+  text-align: center;
+}
+
+main {
+  margin: -3rem auto 1rem auto;
+  width: 90vw;
+  max-width: 800px;
+}

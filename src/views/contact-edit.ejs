@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<%- include('./includes/meta-header.ejs', {
+    title: 'ContactBook | Editar contato',
+    scriptSrc: null,
+    stylesheets: [
+      '/styles/main.css',
+      '/styles/partials/header.css',
+      '/styles/partials/buttons.css',
+      '/styles/partials/form.css',
+      '/styles/pages/contact.css',
+      '/styles/partials/responsivity.css'
+    ]
+  }); %>
+
+<body>
+  <%- include('./includes/header.ejs', { title: 'Editar contato' }); %>
+
+  <main>
+    <h1 class="sr-only">Formulário para editar contato</h1>
+
+    <form method="POST" action="/contact/edit/<%= contact.id %>">
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" value="<%= contact.name %>" />
+      <label for="phone">Telefone</label>
+      <input type="tel" name="phone" id="phone" value="<%= contact.phone %>">
+      <button class="button primary-blue">Salvar</button>
+    </form>
+  </main>
+</body>
+
+</html>
